@@ -1,0 +1,13 @@
+
+h1{color: rgb(208, 255, 0);text-align: center;background-color: rosybrown;height: 100px;width: 100%;font-family: Oswald;}
+body{margin-inline-start: auto;background-color: aliceblue;font-family:Dosis;text-align: center;}
+a{color: red;text-align: center;}
+#fo{height:100px;width: 50%}
+table{margin-left: auto;margin-right: auto;border-collapse:collapse;}
+table,td,th{border: red;}
+#last{text-align: left;}
+
+.postblock{background-color:rgb(239, 220, 220);width:50% ;margin-left: 25%;margin-right: 25%;text-align:center ;line-height: normal;display: inline-block;}
+.profilepost{background-color:rgb(239, 220, 220);width:200px ;height:200px ;text-align:center;align-items: center ;line-height: normal;}
+.flex{display: flex;flex-direction: row;justify-content: space-around;}
+.right{text-align: right;}

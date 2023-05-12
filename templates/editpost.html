@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Add A Blog/Post</h1>
+    <h2>{% if current_user.is_authenticated %}
+        Hello {{ current_user.username }}!
+      {% endif %}</h2>
+      <form action = '' method = "POST" 
+      enctype = "multipart/form-data">
+        <label for="name" >Name:</label>
+        <input type="string" name="bname" id="name" value="{{blog.blogname}}" required><p></p>
+        <label for="dec">Description:</label>
+        <input type="string" name="bdescription" id="dec" value="{{blog.description}}" required><p></p>
+        <label for="image">Change image</label>
+        <input type="file" id="image" name="myfile"><br><p></p>
+        <button type="submit">Update</button>
+    </form>
+    
+    <p><a href="{{url_for('logout')}}">logout</a></p>
+    <p><a href="/dashboard">dashboard</a></p>
+</body>
+</html>

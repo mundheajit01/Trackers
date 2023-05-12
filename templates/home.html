@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <div id="hed">
+    <h1>welcome to PostB</h1></div>
+    <p>it's a web app which helps you to track you daily activites.As this is web app you can use it on any device what you need is just a network conection and a web browser.</p>
+    <p>login to continue..............</p>
+   <div id="href"><a href="{{url_for('login')}}"><h3>login page</h3></a></div> 
+</body>
+</html>

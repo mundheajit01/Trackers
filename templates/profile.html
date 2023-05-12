@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap" rel="stylesheet">
+    <link href="{{url_for('static',filename='main.css')}}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Profile</h1>
+    <h2>{% if current_user.is_authenticated %}
+        Hi {{ current_user.username}}!
+      {% endif %}</h2>
+      <h3>{{user}}'s profile</h3>
+      <div class="right"><h4>Followers: {{count}} following: {{following}} Total Posts:{{no}}</h4></div>
+     <h4>Posts:</h4><div class="flex">
+      {% if blogs!=''%}
+      {% for blog in blogs %}
+       <div class="profilepost">
+        <h4>{{blog.blogname}} 
+        {% if user== current_user.username %}
+        <a href='/deletepost/{{blog.srno}}' title="Delete this Blog/Post"><i class="bi bi-trash3"></i></a>
+         <a href="/editpost/{{blog.srno}}" title="Edit this Blog/Post"><i class="bi bi-pencil"></i></a>
+        {% endif %}</h4>
+        <img src={{ url_for('static', filename='images/'+ blog.image) }} width="90%" height="60%" alt={{blog.description}}>
+       </div>
+       {% endfor %}
+      {% endif %}
+    </div>
+    <p><a href="/dashboard">dashboard</a></p>
+    <p><a href="{{url_for('add')}}">+ Add a Blog/Post</a></p>
+    <p><a href="{{url_for('logout')}}">logout</a></p>
+</body>
+</html>
